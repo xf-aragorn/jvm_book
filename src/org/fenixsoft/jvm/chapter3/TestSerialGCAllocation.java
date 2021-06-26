@@ -56,7 +56,7 @@ public class TestSerialGCAllocation {
     }
 
     /**
-     * VM参数：-Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8 -XX:-HandlePromotionFailure
+     * VM参数：-Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8 -XX:+HandlePromotionFailure
      */
     public static void testHandlePromotion() {
         byte[] allocation1, allocation2, allocation3, allocation4, allocation5, allocation6, allocation7;
