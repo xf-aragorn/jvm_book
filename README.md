@@ -16,6 +16,9 @@
 - **目录XIV，Page164** 4.3.3 VisualVM：多合 - 故障处理工具中”的【多合 - 】应该是【多合一】
 <br/>这个在原稿上是多合一，但印刷后确实怎么看都像是“多合 - ”，请编辑看看。
 
+- **Page 34**：其中lib的可选值包括有：【boot-jd】、freetype、cups、x、alsa、libffi、jtreg、libjpeg、giflib、libpng、lcms、zlib
+<br>更正：其中lib的可选值包括有：【boot-jdk】、freetype、cups、x、alsa、libffi、jtreg、libjpeg、giflib、libpng、lcms、zlib
+
 - **Page 38**：图1-11 在【NetBeans】中创建HotSpot项目（2）
 <br>更正：图1-11 在【CLion】中创建HotSpot项目（2）
 
@@ -43,6 +46,12 @@
       4    10      13   any
      13    16      13   any
    ```
+- **Page 282**：代码清单7-9所示为【java.lang.ClassLoader.getClassLoader()】方法的代码片段
+<br>更正：代码清单7-9所示为【java.lang.Class.getClassLoader()】方法的代码片段
+
+- **Page 282**：代码清单7-9 【ClassLoader.getClassLoader()】方法的代码片段
+<br>更正：代码清单7-9 【Class.getClassLoader()】方法的代码片段
+
 - **Page 378**：我们就只有使用【JSR-296】中定义的插入式注解处理器API来对Java编译子系统的行为施加影响
 <br>更正：我们就只有使用【JSR-269】中定义的插入式注解处理器API来对Java编译子系统的行为施加影响
 
