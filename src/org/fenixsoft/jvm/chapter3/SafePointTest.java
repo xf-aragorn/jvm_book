@@ -796,3 +796,212 @@ Disconnected from the target VM, address: '127.0.0.1:55118', transport: 'socket'
 Process finished with exit code 0
 
  */
+
+/*
+E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\bin\java.exe -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:56112,suspend=y,server=n -Xmx20M -XX:+UseZGC "-Xlog:gc*=info::time,tags,tid" -Xlog:safepoint=info::time,tags,tid -XX:-UseBiasedLocking -XX:+SafepointTimeout -XX:SafepointTimeoutDelay=10 -javaagent:C:\Users\xufeng\AppData\Local\JetBrains\IntelliJIdea2021.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 -classpath "E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.base;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.compiler;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.datatransfer;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.desktop;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.instrument;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.logging;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.management;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.management.rmi;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.naming;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.net.http;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.prefs;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.rmi;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.scripting;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.se;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.security.jgss;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.security.sasl;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.smartcardio;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.sql;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.sql.rowset;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.transaction.xa;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.xml;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\java.xml.crypto;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.accessibility;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.attach;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.charsets;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.compiler;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.crypto.cryptoki;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.crypto.ec;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.crypto.mscapi;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.dynalink;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.editpad;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.hotspot.agent;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.httpserver;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.incubator.foreign;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.incubator.vector;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.ed;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.jvmstat;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.le;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.opt;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.vm.ci;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.vm.compiler;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.internal.vm.compiler.management;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jartool;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.javadoc;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jcmd;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jconsole;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jdeps;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jdi;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jdwp.agent;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jfr;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jlink;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jpackage;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jshell;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jsobject;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.jstatd;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.localedata;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.management;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.management.agent;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.management.jfr;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.naming.dns;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.naming.rmi;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.net;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.nio.mapmode;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.random;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.sctp;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.security.auth;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.security.jgss;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.unsupported;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.unsupported.desktop;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.xml.dom;E:\src\jdk\openjdk\build\windows-x86_64-server-fastdebug\jdk\modules\jdk.zipfs;D:\project\out\production\jvm-book-3rd;E:\src\jvm-book-3rd\lib\asm-3.3.1.jar;E:\src\jvm-book-3rd\lib\cglib-2.2.2.jar;D:\Program Files\JetBrains\IntelliJ IDEA\lib\idea_rt.jar" org.fenixsoft.jvm.chapter3.SafePointTest
+[2022-09-29T10:34:23.283+0800][3956][gc,init] Initializing The Z Garbage Collector
+[2022-09-29T10:34:23.283+0800][3956][gc,init] Version: 17-internal+0-adhoc.xufeng.openjdk (fastdebug)
+[2022-09-29T10:34:23.284+0800][3956][gc,init] NUMA Support: Disabled
+[2022-09-29T10:34:23.284+0800][3956][gc,init] CPUs: 6 total, 6 available
+[2022-09-29T10:34:23.284+0800][3956][gc,init] Memory: 15741M
+[2022-09-29T10:34:23.284+0800][3956][gc,init] Large Page Support: Disabled
+[2022-09-29T10:34:23.285+0800][3956][gc,init] GC Workers: 1 (dynamic)
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Address Space Type: Contiguous/Unrestricted/Complete
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Address Space Size: 320M x 3 = 960M
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Min Capacity: 8M
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Initial Capacity: 20M
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Max Capacity: 20M
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Medium Page Size: N/A
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Pre-touch: Disabled
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Uncommit: Enabled
+[2022-09-29T10:34:23.285+0800][3956][gc,init] Uncommit Delay: 300s
+[2022-09-29T10:34:23.287+0800][3956][gc,init] Runtime Workers: 1
+[2022-09-29T10:34:23.287+0800][3956][gc     ] Using The Z Garbage Collector
+[2022-09-29T10:34:23.287+0800][3956][gc,metaspace] CDS archive(s) not mapped
+[2022-09-29T10:34:23.287+0800][3956][gc,metaspace] Compressed class space mapped at: 0x0000000080000000-0x00000000c0000000, reserved size: 1073741824
+[2022-09-29T10:34:23.287+0800][3956][gc,metaspace] Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0xc0000000
+OpenJDK 64-Bit Server VM warning: Option UseBiasedLocking was deprecated in version 15.0 and will likely be removed in a future release.
+[2022-09-29T10:34:23.600+0800][8908][gc,start    ] GC(0) Garbage Collection (Warmup)
+[2022-09-29T10:34:23.600+0800][8908][gc,task     ] GC(0) Using 1 workers
+[2022-09-29T10:34:23.603+0800][11364][gc,phases   ] GC(0) Pause Mark Start 0.014ms
+[2022-09-29T10:34:23.603+0800][11364][safepoint   ] Safepoint "ZMarkStart", Time since last: 211529400 ns, Reaching safepoint: 2757600 ns, At safepoint: 496800 ns, Total: 3254400 ns
+[2022-09-29T10:34:23.608+0800][8908 ][gc,phases   ] GC(0) Concurrent Mark 4.531ms
+[2022-09-29T10:34:23.609+0800][11364][gc,phases   ] GC(0) Pause Mark End 0.049ms
+[2022-09-29T10:34:23.610+0800][11364][safepoint   ] Safepoint "ZMarkEnd", Time since last: 4612900 ns, Reaching safepoint: 1290800 ns, At safepoint: 950200 ns, Total: 2241000 ns
+[2022-09-29T10:34:23.610+0800][8908 ][gc,phases   ] GC(0) Concurrent Mark Free 0.003ms
+[2022-09-29T10:34:23.611+0800][8908 ][gc,phases   ] GC(0) Concurrent Process Non-Strong References 1.343ms
+[2022-09-29T10:34:23.611+0800][8908 ][gc,phases   ] GC(0) Concurrent Reset Relocation Set 0.001ms
+[2022-09-29T10:34:23.613+0800][11364][safepoint   ] Safepoint "ZVerify", Time since last: 1715100 ns, Reaching safepoint: 556400 ns, At safepoint: 515900 ns, Total: 1072300 ns
+[2022-09-29T10:34:23.619+0800][11364][safepoint   ] Safepoint "CleanClassLoaderDataMetaspaces", Time since last: 250400 ns, Reaching safepoint: 356200 ns, At safepoint: 5865200 ns, Total: 6221400 ns
+[2022-09-29T10:34:23.619+0800][8908 ][gc,phases   ] GC(0) Concurrent Select Relocation Set 6.551ms
+[2022-09-29T10:34:23.621+0800][11364][gc,phases   ] GC(0) Pause Relocate Start 0.054ms
+[2022-09-29T10:34:23.621+0800][11364][safepoint   ] Safepoint "ZRelocateStart", Time since last: 179500 ns, Reaching safepoint: 822800 ns, At safepoint: 519400 ns, Total: 1342200 ns
+[2022-09-29T10:34:23.621+0800][8908 ][gc,phases   ] GC(0) Concurrent Relocate 0.015ms
+[2022-09-29T10:34:23.621+0800][8908 ][gc,load     ] GC(0) Load: 0.00/0.00/0.00
+[2022-09-29T10:34:23.621+0800][8908 ][gc,mmu      ] GC(0) MMU: 2ms/97.3%, 5ms/98.9%, 10ms/99.4%, 20ms/99.4%, 50ms/99.8%, 100ms/99.9%
+[2022-09-29T10:34:23.621+0800][8908 ][gc,marking  ] GC(0) Mark: 1 stripe(s), 2 proactive flush(es), 1 terminate flush(es), 0 completion(s), 0 continuation(s)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,marking  ] GC(0) Mark Stack Usage: 32M
+[2022-09-29T10:34:23.621+0800][8908 ][gc,nmethod  ] GC(0) NMethods: 12 registered, 0 unregistered
+[2022-09-29T10:34:23.621+0800][8908 ][gc,metaspace] GC(0) Metaspace: 3M used, 3M committed, 1032M reserved
+[2022-09-29T10:34:23.621+0800][8908 ][gc,ref      ] GC(0) Soft: 1 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:23.621+0800][8908 ][gc,ref      ] GC(0) Weak: 3 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:23.621+0800][8908 ][gc,ref      ] GC(0) Final: 0 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:23.621+0800][8908 ][gc,ref      ] GC(0) Phantom: 3 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:23.621+0800][8908 ][gc,reloc    ] GC(0) Small Pages: 1 / 2M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:23.621+0800][8908 ][gc,reloc    ] GC(0) Large Pages: 0 / 0M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:23.621+0800][8908 ][gc,reloc    ] GC(0) Forwarding Usage: 0M
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0) Min Capacity: 8M(40%)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0) Max Capacity: 20M(100%)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0) Soft Max Capacity: 20M(100%)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0)                Mark Start          Mark End        Relocate Start      Relocate End           High               Low
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0)  Capacity:       20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0)      Free:       18M (90%)          16M (80%)          16M (80%)          16M (80%)          18M (90%)          16M (80%)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0)      Used:        2M (10%)           4M (20%)           4M (20%)           4M (20%)           4M (20%)           2M (10%)
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0)      Live:         -                 0M (2%)            0M (2%)            0M (2%)             -                  -
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0) Allocated:         -                 2M (10%)           2M (10%)           2M (10%)            -                  -
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0)   Garbage:         -                 1M (8%)            1M (8%)            1M (8%)             -                  -
+[2022-09-29T10:34:23.621+0800][8908 ][gc,heap     ] GC(0) Reclaimed:         -                  -                 0M (0%)            0M (0%)             -                  -
+[2022-09-29T10:34:23.621+0800][8908 ][gc          ] GC(0) Garbage Collection (Warmup) 2M(10%)->4M(20%)
+[2022-09-29T10:34:23.700+0800][8908 ][gc,start    ] GC(1) Garbage Collection (Warmup)
+[2022-09-29T10:34:23.700+0800][8908 ][gc,task     ] GC(1) Using 1 workers
+[2022-09-29T10:34:23.701+0800][11364][gc,phases   ] GC(1) Pause Mark Start 0.014ms
+[2022-09-29T10:34:23.701+0800][11364][safepoint   ] Safepoint "ZMarkStart", Time since last: 78948300 ns, Reaching safepoint: 992900 ns, At safepoint: 419100 ns, Total: 1412000 ns
+[2022-09-29T10:34:23.705+0800][8908 ][gc,phases   ] GC(1) Concurrent Mark 3.846ms
+[2022-09-29T10:34:23.710+0800][11364][gc,phases   ] GC(1) Pause Mark End 0.059ms
+[2022-09-29T10:34:23.710+0800][11364][safepoint   ] Safepoint "ZMarkEnd", Time since last: 3915600 ns, Reaching safepoint: 4623700 ns, At safepoint: 481800 ns, Total: 5105500 ns
+[2022-09-29T10:34:23.710+0800][8908 ][gc,phases   ] GC(1) Concurrent Mark Free 0.002ms
+[2022-09-29T10:34:23.711+0800][8908 ][gc,phases   ] GC(1) Concurrent Process Non-Strong References 1.096ms
+[2022-09-29T10:34:23.711+0800][8908 ][gc,phases   ] GC(1) Concurrent Reset Relocation Set 0.001ms
+[2022-09-29T10:34:23.713+0800][11364][safepoint   ] Safepoint "ZVerify", Time since last: 1335600 ns, Reaching safepoint: 40000 ns, At safepoint: 969800 ns, Total: 1009800 ns
+[2022-09-29T10:34:23.713+0800][11364][safepoint   ] Safepoint "CleanClassLoaderDataMetaspaces", Time since last: 403300 ns, Reaching safepoint: 35000 ns, At safepoint: 25600 ns, Total: 60600 ns
+[2022-09-29T10:34:23.714+0800][8908 ][gc,phases   ] GC(1) Concurrent Select Relocation Set 1.995ms
+[2022-09-29T10:34:23.715+0800][11364][gc,phases   ] GC(1) Pause Relocate Start 0.025ms
+[2022-09-29T10:34:23.715+0800][11364][safepoint   ] Safepoint "ZRelocateStart", Time since last: 1735700 ns, Reaching safepoint: 79200 ns, At safepoint: 263900 ns, Total: 343100 ns
+[2022-09-29T10:34:23.716+0800][8908 ][gc,phases   ] GC(1) Concurrent Relocate 1.269ms
+[2022-09-29T10:34:23.716+0800][8908 ][gc,load     ] GC(1) Load: 0.00/0.00/0.00
+[2022-09-29T10:34:23.716+0800][8908 ][gc,mmu      ] GC(1) MMU: 2ms/97.0%, 5ms/98.8%, 10ms/99.2%, 20ms/99.4%, 50ms/99.8%, 100ms/99.8%
+[2022-09-29T10:34:23.716+0800][8908 ][gc,marking  ] GC(1) Mark: 1 stripe(s), 2 proactive flush(es), 1 terminate flush(es), 0 completion(s), 0 continuation(s)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,marking  ] GC(1) Mark Stack Usage: 32M
+[2022-09-29T10:34:23.716+0800][8908 ][gc,nmethod  ] GC(1) NMethods: 45 registered, 0 unregistered
+[2022-09-29T10:34:23.716+0800][8908 ][gc,metaspace] GC(1) Metaspace: 4M used, 4M committed, 1032M reserved
+[2022-09-29T10:34:23.716+0800][8908 ][gc,ref      ] GC(1) Soft: 10 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:23.716+0800][8908 ][gc,ref      ] GC(1) Weak: 40 encountered, 7 discovered, 6 enqueued
+[2022-09-29T10:34:23.716+0800][8908 ][gc,ref      ] GC(1) Final: 0 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:23.716+0800][8908 ][gc,ref      ] GC(1) Phantom: 4 encountered, 2 discovered, 1 enqueued
+[2022-09-29T10:34:23.716+0800][8908 ][gc,reloc    ] GC(1) Small Pages: 2 / 4M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:23.716+0800][8908 ][gc,reloc    ] GC(1) Large Pages: 0 / 0M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:23.716+0800][8908 ][gc,reloc    ] GC(1) Forwarding Usage: 0M
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1) Min Capacity: 8M(40%)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1) Max Capacity: 20M(100%)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1) Soft Max Capacity: 20M(100%)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1)                Mark Start          Mark End        Relocate Start      Relocate End           High               Low
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1)  Capacity:       20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1)      Free:       16M (80%)          14M (70%)          14M (70%)          16M (80%)          16M (80%)          12M (60%)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1)      Used:        4M (20%)           6M (30%)           6M (30%)           4M (20%)           8M (40%)           4M (20%)
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1)      Live:         -                 0M (3%)            0M (3%)            0M (3%)             -                  -
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1) Allocated:         -                 2M (10%)           2M (10%)           1M (10%)            -                  -
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1)   Garbage:         -                 3M (17%)           3M (17%)           1M (7%)             -                  -
+[2022-09-29T10:34:23.716+0800][8908 ][gc,heap     ] GC(1) Reclaimed:         -                  -                 0M (0%)            1M (10%)            -                  -
+[2022-09-29T10:34:23.716+0800][8908 ][gc          ] GC(1) Garbage Collection (Warmup) 4M(20%)->4M(20%)
+[2022-09-29T10:34:24.003+0800][8908 ][gc,start    ] GC(2) Garbage Collection (Warmup)
+[2022-09-29T10:34:24.003+0800][8908 ][gc,task     ] GC(2) Using 1 workers
+[2022-09-29T10:34:24.004+0800][11364][gc,phases   ] GC(2) Pause Mark Start 0.019ms
+[2022-09-29T10:34:24.005+0800][11364][safepoint   ] Safepoint "ZMarkStart", Time since last: 288504400 ns, Reaching safepoint: 117800 ns, At safepoint: 1762800 ns, Total: 1880600 ns
+[2022-09-29T10:34:24.014+0800][8908 ][gc,phases   ] GC(2) Concurrent Mark 8.339ms
+[2022-09-29T10:34:24.014+0800][11364][gc,phases   ] GC(2) Pause Mark End 0.051ms
+[2022-09-29T10:34:24.015+0800][11364][safepoint   ] Safepoint "ZMarkEnd", Time since last: 8581200 ns, Reaching safepoint: 26700 ns, At safepoint: 1495300 ns, Total: 1522000 ns
+[2022-09-29T10:34:24.015+0800][8908 ][gc,phases   ] GC(2) Concurrent Mark Free 0.002ms
+[2022-09-29T10:34:24.018+0800][8908 ][gc,phases   ] GC(2) Concurrent Process Non-Strong References 2.358ms
+[2022-09-29T10:34:24.018+0800][8908 ][gc,phases   ] GC(2) Concurrent Reset Relocation Set 0.002ms
+[2022-09-29T10:34:24.023+0800][11364][safepoint   ] Safepoint "ZVerify", Time since last: 2515600 ns, Reaching safepoint: 47200 ns, At safepoint: 5004500 ns, Total: 5051700 ns
+[2022-09-29T10:34:24.025+0800][8908 ][gc,phases   ] GC(2) Concurrent Select Relocation Set 2.204ms
+[2022-09-29T10:34:24.026+0800][11364][gc,phases   ] GC(2) Pause Relocate Start 0.037ms
+[2022-09-29T10:34:24.026+0800][11364][safepoint   ] Safepoint "ZRelocateStart", Time since last: 2435700 ns, Reaching safepoint: 61200 ns, At safepoint: 816400 ns, Total: 877600 ns
+[2022-09-29T10:34:24.028+0800][11364][safepoint   ] Safepoint "CleanClassLoaderDataMetaspaces", Time since last: 132100 ns, Reaching safepoint: 1314700 ns, At safepoint: 198400 ns, Total: 1513100 ns
+[2022-09-29T10:34:24.030+0800][8908 ][gc,phases   ] GC(2) Concurrent Relocate 3.299ms
+[2022-09-29T10:34:24.030+0800][8908 ][gc,load     ] GC(2) Load: 0.00/0.00/0.00
+[2022-09-29T10:34:24.030+0800][8908 ][gc,mmu      ] GC(2) MMU: 2ms/97.0%, 5ms/98.8%, 10ms/99.2%, 20ms/99.4%, 50ms/99.8%, 100ms/99.8%
+[2022-09-29T10:34:24.030+0800][8908 ][gc,marking  ] GC(2) Mark: 1 stripe(s), 2 proactive flush(es), 1 terminate flush(es), 0 completion(s), 0 continuation(s)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,marking  ] GC(2) Mark Stack Usage: 32M
+[2022-09-29T10:34:24.030+0800][8908 ][gc,nmethod  ] GC(2) NMethods: 219 registered, 0 unregistered
+[2022-09-29T10:34:24.030+0800][8908 ][gc,metaspace] GC(2) Metaspace: 5M used, 5M committed, 1032M reserved
+[2022-09-29T10:34:24.030+0800][8908 ][gc,ref      ] GC(2) Soft: 34 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:24.030+0800][8908 ][gc,ref      ] GC(2) Weak: 180 encountered, 74 discovered, 74 enqueued
+[2022-09-29T10:34:24.030+0800][8908 ][gc,ref      ] GC(2) Final: 0 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:24.030+0800][8908 ][gc,ref      ] GC(2) Phantom: 22 encountered, 17 discovered, 14 enqueued
+[2022-09-29T10:34:24.030+0800][8908 ][gc,reloc    ] GC(2) Small Pages: 3 / 6M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:24.030+0800][8908 ][gc,reloc    ] GC(2) Large Pages: 0 / 0M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:24.030+0800][8908 ][gc,reloc    ] GC(2) Forwarding Usage: 0M
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2) Min Capacity: 8M(40%)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2) Max Capacity: 20M(100%)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2) Soft Max Capacity: 20M(100%)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2)                Mark Start          Mark End        Relocate Start      Relocate End           High               Low
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2)  Capacity:       20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2)      Free:       14M (70%)          12M (60%)          12M (60%)          16M (80%)          16M (80%)          10M (50%)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2)      Used:        6M (30%)           8M (40%)           8M (40%)           4M (20%)          10M (50%)           4M (20%)
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2)      Live:         -                 0M (4%)            0M (4%)            0M (4%)             -                  -
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2) Allocated:         -                 2M (10%)           2M (10%)           1M (10%)            -                  -
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2)   Garbage:         -                 5M (26%)           5M (26%)           1M (6%)             -                  -
+[2022-09-29T10:34:24.030+0800][8908 ][gc,heap     ] GC(2) Reclaimed:         -                  -                 0M (0%)            3M (20%)            -                  -
+[2022-09-29T10:34:24.030+0800][8908 ][gc          ] GC(2) Garbage Collection (Warmup) 6M(30%)->4M(20%)
+[2022-09-29T10:34:24.247+0800][11364][safepoint   ] Safepoint "ChangeBreakpoints", Time since last: 218930000 ns, Reaching safepoint: 341300 ns, At safepoint: 204400 ns, Total: 545700 ns
+Connected to the target VM, address: '127.0.0.1:56112', transport: 'socket'
+[2022-09-29T10:34:24.273+0800][11364][safepoint   ] Safepoint "ChangeBreakpoints", Time since last: 25030300 ns, Reaching safepoint: 48600 ns, At safepoint: 190100 ns, Total: 238700 ns
+[2022-09-29T10:34:24.274+0800][11364][safepoint   ] Safepoint "ChangeBreakpoints", Time since last: 1391200 ns, Reaching safepoint: 51200 ns, At safepoint: 199700 ns, Total: 250900 ns
+主线程开始睡觉
+测试01线程 开始！
+测试02线程 开始！
+睡醒了, 一共睡了 : 1002 毫秒
+打印一下num 看看结果是多少: 124394756
+[2022-09-29T10:34:26.000+0800][8908 ][gc,start    ] GC(3) Garbage Collection (Proactive)
+[2022-09-29T10:34:26.000+0800][8908 ][gc,task     ] GC(3) Using 1 workers
+[2022-09-29T10:34:26.000+0800][11364][gc,phases   ] GC(3) Pause Mark Start 0.035ms
+[2022-09-29T10:34:26.000+0800][11364][safepoint   ] Safepoint "ZMarkStart", Time since last: 1725505200 ns, Reaching safepoint: 161100 ns, At safepoint: 370100 ns, Total: 531200 ns
+[2022-09-29T10:34:26.009+0800][8908 ][gc,phases   ] GC(3) Concurrent Mark 8.285ms
+[2022-09-29T10:34:26.009+0800][11364][gc,phases   ] GC(3) Pause Mark End 0.104ms
+[2022-09-29T10:34:26.009+0800][11364][safepoint   ] Safepoint "ZMarkEnd", Time since last: 8407300 ns, Reaching safepoint: 108900 ns, At safepoint: 379800 ns, Total: 488700 ns
+[2022-09-29T10:34:26.009+0800][8908 ][gc,phases   ] GC(3) Concurrent Mark Free 0.001ms
+[2022-09-29T10:34:26.023+0800][8908 ][gc,phases   ] GC(3) Concurrent Process Non-Strong References 13.201ms
+[2022-09-29T10:34:26.023+0800][8908 ][gc,phases   ] GC(3) Concurrent Reset Relocation Set 0.001ms
+[2022-09-29T10:34:26.024+0800][11364][safepoint   ] Safepoint "ZVerify", Time since last: 13290800 ns, Reaching safepoint: 212900 ns, At safepoint: 463100 ns, Total: 676000 ns
+[2022-09-29T10:34:26.025+0800][11364][safepoint   ] Safepoint "CleanClassLoaderDataMetaspaces", Time since last: 1350700 ns, Reaching safepoint: 100000 ns, At safepoint: 45200 ns, Total: 145200 ns
+[2022-09-29T10:34:26.025+0800][8908 ][gc,phases   ] GC(3) Concurrent Select Relocation Set 1.555ms
+[2022-09-29T10:34:26.025+0800][11364][gc,phases   ] GC(3) Pause Relocate Start 0.041ms
+[2022-09-29T10:34:26.026+0800][11364][safepoint   ] Safepoint "ZRelocateStart", Time since last: 118400 ns, Reaching safepoint: 93800 ns, At safepoint: 213100 ns, Total: 306900 ns
+[2022-09-29T10:34:26.030+0800][8908 ][gc,phases   ] GC(3) Concurrent Relocate 4.090ms
+[2022-09-29T10:34:26.030+0800][8908 ][gc,load     ] GC(3) Load: 0.00/0.00/0.00
+[2022-09-29T10:34:26.030+0800][8908 ][gc,mmu      ] GC(3) MMU: 2ms/94.8%, 5ms/97.9%, 10ms/98.6%, 20ms/99.3%, 50ms/99.6%, 100ms/99.8%
+[2022-09-29T10:34:26.030+0800][8908 ][gc,marking  ] GC(3) Mark: 1 stripe(s), 2 proactive flush(es), 1 terminate flush(es), 0 completion(s), 0 continuation(s)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,marking  ] GC(3) Mark Stack Usage: 32M
+[2022-09-29T10:34:26.030+0800][8908 ][gc,nmethod  ] GC(3) NMethods: 493 registered, 0 unregistered
+[2022-09-29T10:34:26.030+0800][8908 ][gc,metaspace] GC(3) Metaspace: 6M used, 6M committed, 1032M reserved
+[2022-09-29T10:34:26.030+0800][8908 ][gc,ref      ] GC(3) Soft: 87 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:26.030+0800][8908 ][gc,ref      ] GC(3) Weak: 261 encountered, 69 discovered, 69 enqueued
+[2022-09-29T10:34:26.030+0800][8908 ][gc,ref      ] GC(3) Final: 0 encountered, 0 discovered, 0 enqueued
+[2022-09-29T10:34:26.030+0800][8908 ][gc,ref      ] GC(3) Phantom: 16 encountered, 15 discovered, 15 enqueued
+[2022-09-29T10:34:26.030+0800][8908 ][gc,reloc    ] GC(3) Small Pages: 4 / 8M, Empty: 0M, Relocated: 1M, In-Place: 0
+[2022-09-29T10:34:26.030+0800][8908 ][gc,reloc    ] GC(3) Large Pages: 0 / 0M, Empty: 0M, Relocated: 0M, In-Place: 0
+[2022-09-29T10:34:26.030+0800][8908 ][gc,reloc    ] GC(3) Forwarding Usage: 0M
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3) Min Capacity: 8M(40%)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3) Max Capacity: 20M(100%)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3) Soft Max Capacity: 20M(100%)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3)                Mark Start          Mark End        Relocate Start      Relocate End           High               Low
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3)  Capacity:       20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)         20M (100%)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3)      Free:       12M (60%)          12M (60%)          12M (60%)          16M (80%)          16M (80%)           8M (40%)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3)      Used:        8M (40%)           8M (40%)           8M (40%)           4M (20%)          12M (60%)           4M (20%)
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3)      Live:         -                 1M (7%)            1M (7%)            1M (7%)             -                  -
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3) Allocated:         -                 0M (0%)            0M (0%)            1M (10%)            -                  -
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3)   Garbage:         -                 6M (33%)           6M (33%)           0M (3%)             -                  -
+[2022-09-29T10:34:26.030+0800][8908 ][gc,heap     ] GC(3) Reclaimed:         -                  -                 0M (0%)            5M (30%)            -                  -
+[2022-09-29T10:34:26.030+0800][8908 ][gc          ] GC(3) Garbage Collection (Proactive) 8M(40%)->4M(20%)
+测试02线程 结束！
+测试01线程 结束！
+[2022-09-29T10:34:27.933+0800][3956 ][gc,heap,exit] Heap
+[2022-09-29T10:34:27.933+0800][3956 ][gc,heap,exit]  ZHeap           used 4M, capacity 20M, max capacity 20M
+[2022-09-29T10:34:27.933+0800][3956 ][gc,heap,exit]  Metaspace       used 6794K, committed 6976K, reserved 1056768K
+[2022-09-29T10:34:27.933+0800][3956 ][gc,heap,exit]   class space    used 595K, committed 704K, reserved 1048576K
+Disconnected from the target VM, address: '127.0.0.1:56112', transport: 'socket'
+
+Process finished with exit code 0
+
+ */
