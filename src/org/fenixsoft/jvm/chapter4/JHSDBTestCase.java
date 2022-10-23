@@ -2,6 +2,7 @@ package org.fenixsoft.jvm.chapter4;
 
 /**
  * staticObj、instanceObj、localObj存放在哪里？
+ *  启动参数： -Xmx10m -XX:+UseSerialGC -XX:-UseCompressedOops
  */
 public class JHSDBTestCase {
 
@@ -22,3 +23,7 @@ public class JHSDBTestCase {
         test.foo();
     }
 }
+
+/*
+在软件的“windows”菜单中，打开console，命令help会输出所有可用的命令
+ */

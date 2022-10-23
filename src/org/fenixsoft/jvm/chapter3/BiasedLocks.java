@@ -1,6 +1,9 @@
 package org.fenixsoft.jvm.chapter3;
 
 
+import org.openjdk.jol.info.ClassLayout;
+import org.openjdk.jol.vm.VM;
+
 import java.util.concurrent.locks.LockSupport;
 import java.util.stream.Stream;
 
@@ -21,14 +24,47 @@ public class BiasedLocks {
     // Biased locks are on by default, but you can disable them by -XX:-UseBiasedLocking
     // It is quite possible that in the modern massively parallel world, they should be
     // turned back off by default
-
+    public class SimpleInt {
+        private int state;
+    }
+    public static class SSimpleInt {
+        private int state;
+    }
+    public class SimpleLong {
+        private long state;
+    }
+    public static class Lock {}
+    public class FieldsArrangement {
+        private boolean first;
+        private char second;
+        private double third;
+        private int fourth;
+        private boolean fifth;
+    }
     public static void main(String[] args) throws InterruptedException {
+        System.out.println(ClassLayout.parseClass(SimpleInt.class).toPrintable());
+        System.out.println(ClassLayout.parseClass(SSimpleInt.class).toPrintable());
+        System.out.println(VM.current().details());
+        SSimpleInt instance = new SSimpleInt();
+        System.out.println(ClassLayout.parseInstance(instance).toPrintable());
+        System.out.println("The identity hash code is " + System.identityHashCode(instance));
+        System.out.println(ClassLayout.parseInstance(instance).toPrintable());
+        System.out.println(ClassLayout.parseClass(SimpleLong.class).toPrintable());
+        System.out.println(ClassLayout.parseClass(FieldsArrangement.class).toPrintable());
+        Lock lock = new Lock();
+        System.out.println(ClassLayout.parseInstance(lock).toPrintable());
+        synchronized (lock) {
+            System.out.println(ClassLayout.parseInstance(lock).toPrintable());
+        }
 
         Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
 
+        System.out.println(ClassLayout.parseClass(SimpleLong.class).toPrintable());
         Stream.generate(() -> new Thread(BiasedLocks::contend))
                 .limit(10)
                 .forEach(Thread::start);
+
+        Thread.sleep(5_000_000); // Because of BiasedLockingStartupDelay
     }
 
 }

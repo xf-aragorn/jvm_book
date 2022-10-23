@@ -1,0 +1,332 @@
+
+PS E:\src\jvm-book-3rd\target\classes\org\fenixsoft\jvm\chapter4> javap -verbose Bar.class
+Classfile /E:/src/jvm-book-3rd/target/classes/org/fenixsoft/jvm/chapter4/Bar.class
+  Last modified 2022年10月7日; size 2136 bytes
+  SHA-256 checksum b36e4b8be2861a2d2b9bb05a24707dfc3d6f7764b5acde54db97ee4d541c3a27
+  Compiled from "Bar.java"
+public class org.fenixsoft.jvm.chapter4.Bar
+  minor version: 0
+  major version: 55
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #8                          // org/fenixsoft/jvm/chapter4/Bar
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 6, methods: 8, attributes: 3
+Constant pool:
+    #1 = Methodref          #2.#3         // java/lang/Object."<init>":()V
+    #2 = Class              #4            // java/lang/Object
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               java/lang/Object
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = Fieldref           #8.#9         // org/fenixsoft/jvm/chapter4/Bar.a:I
+    #8 = Class              #10           // org/fenixsoft/jvm/chapter4/Bar
+    #9 = NameAndType        #11:#12       // a:I
+   #10 = Utf8               org/fenixsoft/jvm/chapter4/Bar
+   #11 = Utf8               a
+   #12 = Utf8               I
+   #13 = Double             0.3d
+   #15 = Fieldref           #8.#16        // org/fenixsoft/jvm/chapter4/Bar.d:D
+   #16 = NameAndType        #17:#18       // d:D
+   #17 = Utf8               d
+   #18 = Utf8               D
+   #19 = String             #20           // 中文字符串
+   #20 = Utf8               中文字符串
+   #21 = Fieldref           #8.#22        // org/fenixsoft/jvm/chapter4/Bar.s1:Ljava/lang/String;
+   #22 = NameAndType        #23:#24       // s1:Ljava/lang/String;
+   #23 = Utf8               s1
+   #24 = Utf8               Ljava/lang/String;
+   #25 = Methodref          #26.#27       // java/lang/Long.valueOf:(J)Ljava/lang/Long;
+   #26 = Class              #28           // java/lang/Long
+   #27 = NameAndType        #29:#30       // valueOf:(J)Ljava/lang/Long;
+   #28 = Utf8               java/lang/Long
+   #29 = Utf8               valueOf
+   #30 = Utf8               (J)Ljava/lang/Long;
+   #31 = Fieldref           #8.#32        // org/fenixsoft/jvm/chapter4/Bar.along:Ljava/lang/Long;
+   #32 = NameAndType        #33:#34       // along:Ljava/lang/Long;
+   #33 = Utf8               along
+   #34 = Utf8               Ljava/lang/Long;
+   #35 = Fieldref           #8.#36        // org/fenixsoft/jvm/chapter4/Bar.obj:Ljava/lang/Object;
+   #36 = NameAndType        #37:#38       // obj:Ljava/lang/Object;
+   #37 = Utf8               obj
+   #38 = Utf8               Ljava/lang/Object;
+   #39 = Fieldref           #8.#40        // org/fenixsoft/jvm/chapter4/Bar.b:I
+   #40 = NameAndType        #41:#12       // b:I
+   #41 = Utf8               b
+   #42 = Fieldref           #43.#44       // java/lang/System.out:Ljava/io/PrintStream;
+   #43 = Class              #45           // java/lang/System
+   #44 = NameAndType        #46:#47       // out:Ljava/io/PrintStream;
+   #45 = Utf8               java/lang/System
+   #46 = Utf8               out
+   #47 = Utf8               Ljava/io/PrintStream;
+   #48 = String             #49           // monitor...
+   #49 = Utf8               monitor...
+   #50 = Methodref          #51.#52       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #51 = Class              #53           // java/io/PrintStream
+   #52 = NameAndType        #54:#55       // println:(Ljava/lang/String;)V
+   #53 = Utf8               java/io/PrintStream
+   #54 = Utf8               println
+   #55 = Utf8               (Ljava/lang/String;)V
+   #56 = InvokeDynamic      #0:#57        // #0:run:()Ljava/lang/Runnable;
+   #57 = NameAndType        #58:#59       // run:()Ljava/lang/Runnable;
+   #58 = Utf8               run
+   #59 = Utf8               ()Ljava/lang/Runnable;
+   #60 = InterfaceMethodref #61.#62       // java/lang/Runnable.run:()V
+   #61 = Class              #63           // java/lang/Runnable
+   #62 = NameAndType        #58:#6        // run:()V
+   #63 = Utf8               java/lang/Runnable
+   #64 = Methodref          #8.#3         // org/fenixsoft/jvm/chapter4/Bar."<init>":()V
+   #65 = Methodref          #8.#66        // org/fenixsoft/jvm/chapter4/Bar.sum:(I)I
+   #66 = NameAndType        #67:#68       // sum:(I)I
+   #67 = Utf8               sum
+   #68 = Utf8               (I)I
+   #69 = Methodref          #8.#70        // org/fenixsoft/jvm/chapter4/Bar.invokedynamictest:(I)V
+   #70 = NameAndType        #71:#72       // invokedynamictest:(I)V
+   #71 = Utf8               invokedynamictest
+   #72 = Utf8               (I)V
+   #73 = String             #74           // thisis invokedynamic
+   #74 = Utf8               thisis invokedynamic
+   #75 = Utf8               Code
+   #76 = Utf8               LineNumberTable
+   #77 = Utf8               LocalVariableTable
+   #78 = Utf8               this
+   #79 = Utf8               Lorg/fenixsoft/jvm/chapter4/Bar;
+   #80 = Utf8               c
+   #81 = Utf8               sync
+   #82 = Utf8               StackMapTable
+   #83 = Class              #84           // java/lang/Throwable
+   #84 = Utf8               java/lang/Throwable
+   #85 = Utf8               sync2
+   #86 = Utf8               r
+   #87 = Utf8               Ljava/lang/Runnable;
+   #88 = Utf8               main
+   #89 = Utf8               ([Ljava/lang/String;)V
+   #90 = Utf8               args
+   #91 = Utf8               [Ljava/lang/String;
+   #92 = Utf8               lambda$invokedynamictest$0
+   #93 = Utf8               <clinit>
+   #94 = Utf8               SourceFile
+   #95 = Utf8               Bar.java
+   #96 = Utf8               BootstrapMethods
+   #97 = MethodHandle       6:#98         // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/l
+ang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #98 = Methodref          #99.#100      // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/Method
+Handle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #99 = Class              #101          // java/lang/invoke/LambdaMetafactory
+  #100 = NameAndType        #102:#103     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType
+;)Ljava/lang/invoke/CallSite;
+  #101 = Utf8               java/lang/invoke/LambdaMetafactory
+  #102 = Utf8               metafactory
+  #103 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #104 = MethodType         #6            //  ()V
+  #105 = MethodHandle       6:#106        // REF_invokeStatic org/fenixsoft/jvm/chapter4/Bar.lambda$invokedynamictest$0:()V
+  #106 = Methodref          #8.#107       // org/fenixsoft/jvm/chapter4/Bar.lambda$invokedynamictest$0:()V
+  #107 = NameAndType        #92:#6        // lambda$invokedynamictest$0:()V
+  #108 = Utf8               InnerClasses
+  #109 = Class              #110          // java/lang/invoke/MethodHandles$Lookup
+  #110 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #111 = Class              #112          // java/lang/invoke/MethodHandles
+  #112 = Utf8               java/lang/invoke/MethodHandles
+  #113 = Utf8               Lookup
+{
+  int a;
+    descriptor: I
+    flags: (0x0000)
+
+  static int b;
+    descriptor: I
+    flags: (0x0008) ACC_STATIC
+
+  double d;
+    descriptor: D
+    flags: (0x0000)
+
+  java.lang.String s1;
+    descriptor: Ljava/lang/String;
+    flags: (0x0000)
+
+  final java.lang.Long along;
+    descriptor: Ljava/lang/Long;
+    flags: (0x0010) ACC_FINAL
+
+  java.lang.Object obj;
+    descriptor: Ljava/lang/Object;
+    flags: (0x0000)
+
+  public org.fenixsoft.jvm.chapter4.Bar();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: iconst_1
+         6: putfield      #7                  // Field a:I
+         9: aload_0
+        10: ldc2_w        #13                 // double 0.3d
+        13: putfield      #15                 // Field d:D
+        16: aload_0
+        17: ldc           #19                 // String 中文字符串
+        19: putfield      #21                 // Field s1:Ljava/lang/String;
+        22: aload_0
+        23: lconst_1
+        24: invokestatic  #25                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+        27: putfield      #31                 // Field along:Ljava/lang/Long;
+        30: aload_0
+        31: new           #2                  // class java/lang/Object
+        34: dup
+        35: invokespecial #1                  // Method java/lang/Object."<init>":()V
+        38: putfield      #35                 // Field obj:Ljava/lang/Object;
+        41: return
+      LineNumberTable:
+        line 5: 0
+        line 6: 4
+        line 8: 9
+        line 9: 16
+        line 10: 22
+        line 14: 30
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      42     0  this   Lorg/fenixsoft/jvm/chapter4/Bar;
+
+  public int sum(int);
+    descriptor: (I)I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: getfield      #7                  // Field a:I
+         4: getstatic     #39                 // Field b:I
+         7: iadd
+         8: iload_1
+         9: iadd
+        10: ireturn
+      LineNumberTable:
+        line 12: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lorg/fenixsoft/jvm/chapter4/Bar;
+            0      11     1     c   I
+
+  public void sync();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: aload_0
+         1: getfield      #35                 // Field obj:Ljava/lang/Object;
+         4: dup
+         5: astore_1
+         6: monitorenter
+         7: getstatic     #42                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        10: ldc           #48                 // String monitor...
+        12: invokevirtual #50                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        15: aload_1
+        16: monitorexit
+        17: goto          25
+        20: astore_2
+        21: aload_1
+        22: monitorexit
+        23: aload_2
+        24: athrow
+        25: return
+      Exception table:
+         from    to  target type
+             7    17    20   any
+            20    23    20   any
+      LineNumberTable:
+        line 17: 0
+        line 18: 7
+        line 19: 15
+        line 20: 25
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      26     0  this   Lorg/fenixsoft/jvm/chapter4/Bar;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 20
+          locals = [ class org/fenixsoft/jvm/chapter4/Bar, class java/lang/Object ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 250 /* chop */
+          offset_delta = 4
+
+  public synchronized void sync2();
+    descriptor: ()V
+    flags: (0x0021) ACC_PUBLIC, ACC_SYNCHRONIZED
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #42                 // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #48                 // String monitor...
+         5: invokevirtual #50                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 23: 0
+        line 24: 8
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lorg/fenixsoft/jvm/chapter4/Bar;
+
+  public static void invokedynamictest(int);
+    descriptor: (I)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=2, args_size=1
+         0: invokedynamic #56,  0             // InvokeDynamic #0:run:()Ljava/lang/Runnable;
+         5: astore_1
+         6: aload_1
+         7: invokeinterface #60,  1           // InterfaceMethod java/lang/Runnable.run:()V
+        12: return
+      LineNumberTable:
+        line 26: 0
+        line 27: 6
+        line 28: 12
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      13     0     c   I
+            6       7     1     r   Ljava/lang/Runnable;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: new           #8                  // class org/fenixsoft/jvm/chapter4/Bar
+         3: dup
+         4: invokespecial #64                 // Method "<init>":()V
+         7: iconst_3
+         8: invokevirtual #65                 // Method sum:(I)I
+        11: pop
+        12: bipush        111
+        14: invokestatic  #69                 // Method invokedynamictest:(I)V
+        17: return
+      LineNumberTable:
+        line 30: 0
+        line 31: 12
+        line 33: 17
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      18     0  args   [Ljava/lang/String;
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: iconst_2
+         1: putstatic     #39                 // Field b:I
+         4: return
+      LineNumberTable:
+        line 7: 0
+}
+SourceFile: "Bar.java"
+BootstrapMethods:
+  0: #97 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/i
+nvoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #104 ()V
+      #105 REF_invokeStatic org/fenixsoft/jvm/chapter4/Bar.lambda$invokedynamictest$0:()V
+      #104 ()V
+InnerClasses:
+  public static final #113= #109 of #111; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+PS E:\src\jvm-book-3rd\target\classes\org\fenixsoft\jvm\chapter4>
+
