@@ -1,13 +1,14 @@
 package org.fenixsoft.jvm.chapter3;
 
-import jdk.internal.vm.annotation.Contended;
+//import jdk.internal.vm.annotation.Contended;
+//import jdk.internal.vm.annotation.Contended;
 import org.openjdk.jol.info.ClassLayout;
 
 public class Isolated {
-    @Contended
+//    @Contended
     private int v1;
 
-    @Contended
+//    @Contended
     private long v2;
 
     public static void main(String[] args){

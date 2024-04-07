@@ -6,15 +6,15 @@ import org.openjdk.jol.info.ClassLayout;
 import java.util.concurrent.locks.LockSupport;
 import java.util.stream.Stream;
 
-public class BiasedLocks {
+public class BiasedLocks2 {
     //jdk 8优化，synchronized同步线程会优先使用偏向锁
     private static  void contend() {
-        System.out.println(Thread.currentThread().toString()+" before:"+ClassLayout.parseClass(BiasedLocks.class).toPrintable());
-        synchronized(BiasedLocks.class) {
-            LockSupport.parkNanos(100_000);
-        }
-
-        System.out.println(Thread.currentThread().toString()+" after:"+ClassLayout.parseClass(BiasedLocks.class).toPrintable());
+//        System.out.println(Thread.currentThread().toString()+" before:"+ClassLayout.parseClass(BiasedLocks2.class).toPrintable());
+//        synchronized(BiasedLocks2.class) {
+//            LockSupport.parkNanos(100_000);
+//        }
+//
+//        System.out.println(Thread.currentThread().toString()+" after:"+ClassLayout.parseClass(BiasedLocks2.class).toPrintable());
     }
 
     // Run with: -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDetails
@@ -29,41 +29,19 @@ public class BiasedLocks {
     // It is quite possible that in the modern massively parallel world, they should be
     // turned back off by default
 
-    public static class AnonyThread implements  Runnable{
 
-        @Override
-        public void run() {
-            BiasedLocks.contend();
-            System.out.println(ClassLayout.parseInstance(this).toPrintable());
-            System.out.println(ClassLayout.parseClass(AnonyThread.class).toPrintable());
-        }
-    }
-    static int index = 0;
-    public static void setThreadNameAndSetart(Thread t){
-        t.setName("th"+ ++index);
-        t.start();
-    }
 
     public static void main(String[] args) throws InterruptedException {
 
-        Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
-        Stream.generate(() -> new Thread(BiasedLocks::contend))
-                .limit(10)
-                .forEach(BiasedLocks::setThreadNameAndSetart);
+//        Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
+//        Stream.generate(() -> new Thread(BiasedLocks2::contend))
+//                .limit(10)
 //                .forEach(Thread::start);
-
-        Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
+//                .forEach(Thread::start);
+        new Thread(BiasedLocks2::contend).start();
+//        Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
     }
 
-    public static void mainx(String[] args) throws InterruptedException {
-        AnonyThread t = new AnonyThread();
-        Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
-        Stream.generate(() -> new Thread(t))
-                .limit(5)
-                .forEach(Thread::start);
-
-        Thread.sleep(5_000); // Because of BiasedLockingStartupDelay
-    }
 
 }
 //-XX:+PrintFieldLayout

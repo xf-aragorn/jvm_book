@@ -4,6 +4,10 @@ import jdk.internal.vm.annotation.Contended;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.vm.VM;
 
+/**
+ * 内存布局的参考文章： https://www.baeldung.com/java-memory-layout
+ */
+
 public class MemoryLayout {
     public class Isolated {
 

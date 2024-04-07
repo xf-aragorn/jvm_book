@@ -37,6 +37,8 @@ public class DynamicProxyTest {
     }
 
     public static void main(String[] args) {
+//        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true"); //jdk8-
+        System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true"); //jdk9+
         IHello hello = (IHello) new DynamicProxy().bind(new Hello());
         hello.sayHello();
     }

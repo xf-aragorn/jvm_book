@@ -16,8 +16,15 @@ public class MemoryLayout2 {
 
     public class SimpleLong {
         private long state;
+        public void test(){
+            System.out.println(""+MemoryLayout2.this);
+        }
     }
 
+    public void test(){
+        SimpleLong sl = new SimpleLong();
+        sl.test();
+    }
     public static class Lock {
     }
 
@@ -31,27 +38,33 @@ public class MemoryLayout2 {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println(ClassLayout.parseClass(SimpleInt.class).toPrintable());
-        System.out.println(ClassLayout.parseClass(SSimpleInt.class).toPrintable());
+        System.out.println("SSimpleInt class: "+ClassLayout.parseClass(SSimpleInt.class).toPrintable());
         System.out.println(VM.current().details());
         SSimpleInt instance = new SSimpleInt();
-        System.out.println(ClassLayout.parseInstance(instance).toPrintable());
+        System.out.println("SSimpleInt instance: "+ClassLayout.parseInstance(instance).toPrintable());
         System.out.println("The identity hash code is " + System.identityHashCode(instance));
         System.out.println(ClassLayout.parseInstance(instance).toPrintable());
         System.out.println(ClassLayout.parseClass(SimpleLong.class).toPrintable());
         System.out.println(ClassLayout.parseClass(FieldsArrangement.class).toPrintable());
         Lock lock = new Lock();
+
         System.out.println("初始状态"+ClassLayout.parseInstance(lock).toPrintable());
         synchronized (lock) {
             System.out.println("同步块中："+ClassLayout.parseInstance(lock).toPrintable());
         }
-            new Thread(()->{
-                synchronized (lock) {
-                    System.out.println("在新线程同步块中：" + ClassLayout.parseInstance(lock).toPrintable());
-                }
+        new Thread(()->{
+            synchronized (lock) {
+                System.out.println("在新线程同步块中：" + ClassLayout.parseInstance(lock).toPrintable());
+            }
 
-            }).start();
+        }).start();
         LockSupport.parkNanos(1000);
         System.out.println("退出同步："+ClassLayout.parseInstance(lock).toPrintable());
+
+        boolean[] booleans = new boolean[3];
+        System.out.println(ClassLayout.parseInstance(booleans).toPrintable());
+        String[] sarr = new String[10];
+        System.out.println(ClassLayout.parseInstance(sarr).toPrintable());
     }
 }
 

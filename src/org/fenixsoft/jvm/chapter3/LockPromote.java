@@ -5,6 +5,9 @@ import org.openjdk.jol.vm.VM;
 
 import java.util.concurrent.locks.LockSupport;
 
+/**
+ * 锁升级演示
+ */
 public class LockPromote {
     public class SimpleInt {
         private int state;
@@ -29,7 +32,8 @@ public class LockPromote {
         private boolean fifth;
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    private static int recurive = 0;
+    public static void mainx(String[] args) throws InterruptedException {
 
         Lock lock = new Lock();
         System.out.println("初始状态"+ClassLayout.parseInstance(lock).toPrintable());
@@ -48,17 +52,27 @@ public class LockPromote {
         System.out.println(Thread.currentThread().getName()+"已退出同步块："+ClassLayout.parseInstance(lock).toPrintable());
     }
 
-    public void printSyncObjInfo(Lock lock){
-        System.out.println("初始状态"+ClassLayout.parseInstance(lock).toPrintable());
+    public static void main(String[] args) throws InterruptedException {
+
+        Lock lock = new Lock();
+
+        printSyncObjInfo(lock);
+    }
+
+    public static void printSyncObjInfo(Lock lock){
+        recurive++;
+        System.out.println(Thread.currentThread().getName()+"进入同步块前：" + ClassLayout.parseInstance(lock).toPrintable());
         synchronized (lock) {
             System.out.println(Thread.currentThread().getName()+"同步块中开始："+ClassLayout.parseInstance(lock).toPrintable());
-            new Thread(()->{
+            if(recurive < 2) {
+                new Thread(() -> {
 
-                printSyncObjInfo(lock);
+                    printSyncObjInfo(lock);
 
-            }).start();
-            LockSupport.parkNanos(1000);
-            System.out.println(Thread.currentThread().getName()+"同步块中结束："+ClassLayout.parseInstance(lock).toPrintable());
+                }).start();
+                LockSupport.parkNanos(1000);
+            }
+            System.out.println(Thread.currentThread().getName()+"同步块中最后："+ClassLayout.parseInstance(lock).toPrintable());
         }
         System.out.println(Thread.currentThread().getName()+"已退出同步块："+ClassLayout.parseInstance(lock).toPrintable());
     }
@@ -587,6 +601,80 @@ Instance size: 16 bytes
 Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 
 Disconnected from the target VM, address: '127.0.0.1:55243', transport: 'socket'
+
+Process finished with exit code 0
+
+ */
+
+/*
+C:\Users\xufeng\.jdks\corretto-11.0.17\bin\java.exe -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:60717,suspend=y,server=n -Djdk.attach.allowAttachSelf -XX:-UseBiasedLocking -XX:+PrintCommandLineFlags -javaagent:C:\Users\xufeng\AppData\Local\JetBrains\IntelliJIdea2022.2\captureAgent\debugger-agent.jar=file:/C:/Users/xufeng/AppData/Local/Temp/capture2.props -Dfile.encoding=UTF-8 -classpath "E:\src\jvm-book-3rd\target\classes;E:\src\jvm-book-3rd\lib\asm-3.3.1.jar;E:\src\jvm-book-3rd\lib\cglib-2.2.2.jar;E:\src\jvm-book-3rd\src\org\fenixsoft\jvm\chapter5\EclipseStartTime_1.0.0.201011281102.jar;E:\java-maven-repository\repository\org\projectlombok\lombok\1.18.8\lombok-1.18.8.jar;E:\java-maven-repository\repository\io\btrace\btrace-client\2.2.2\btrace-client-2.2.2.jar;E:\java-maven-repository\repository\org\openjdk\jol\jol-core\0.16\jol-core-0.16.jar;D:\Program Files\JetBrains\IntelliJ IDEA\lib\idea_rt.jar" org.fenixsoft.jvm.chapter3.LockPromote
+-XX:G1ConcRefinementThreads=6 -XX:GCDrainStackTargetSize=64 -XX:InitialHeapSize=257905536 -XX:MaxHeapSize=4126488576 -XX:+PrintCommandLineFlags -XX:ReservedCodeCacheSize=251658240 -XX:+SegmentedCodeCache -XX:-UseBiasedLocking -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseG1GC -XX:-UseLargePagesIndividualAllocation
+Connected to the target VM, address: '127.0.0.1:60717', transport: 'socket'
+main进入同步块前：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x0000000000000001 (non-biasable; age: 0)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+main同步块中开始：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000000f2b7aff438 (thin lock: 0x000000f2b7aff438)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+Thread-0进入同步块前：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000000f2b7aff438 (thin lock: 0x000000f2b7aff438)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+main同步块中最后：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000001f8c788ce82 (fat lock: 0x000001f8c788ce82)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+main已退出同步块：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000001f8c788ce82 (fat lock: 0x000001f8c788ce82)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+Thread-0同步块中开始：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000001f8c788ce82 (fat lock: 0x000001f8c788ce82)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+Thread-0同步块中最后：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000001f8c788ce82 (fat lock: 0x000001f8c788ce82)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+Thread-0已退出同步块：org.fenixsoft.jvm.chapter3.LockPromote$Lock object internals:
+OFF  SZ   TYPE DESCRIPTION               VALUE
+  0   8        (object header: mark)     0x000001f8c788ce82 (fat lock: 0x000001f8c788ce82)
+  8   4        (object header: class)    0x00067a48
+ 12   4        (object alignment gap)
+Instance size: 16 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+Disconnected from the target VM, address: '127.0.0.1:60717', transport: 'socket'
 
 Process finished with exit code 0
 
